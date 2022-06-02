@@ -1,0 +1,13 @@
+
+__________ demo.js ___________
+
+
+var http = require("http")
+var uc = require("upper-case")
+
+http.createServer(function(req,res){
+    res.write(uc.upperCase("node webpage"));
+    res.end();
+}).listen(3000)
+
+
