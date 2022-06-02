@@ -1,0 +1,18 @@
+
+var add = function Sum(a,b){
+    return a+b
+}
+
+
+function complexExp(add)
+{
+console.warn(add(200,300))
+}
+
+complexExp(add)
+
+
+
+_____ OUTPUT __
+
+5000 
