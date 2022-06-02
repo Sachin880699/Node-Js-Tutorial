@@ -1,0 +1,16 @@
+__________ Demo.js _________
+
+var other = require("./other")
+console.warn(other())
+
+
+
+__________ other.js _________
+
+var other = function()
+{
+    return 100;
+}
+module.exports = other
+
+
