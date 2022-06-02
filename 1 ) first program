@@ -1,0 +1,16 @@
+______________ demo.js __________
+
+var http  = require("http");
+
+http.createServer(function(req , res){
+res.write("Hello form node js server");
+res.end();
+}).listen(5000)
+
+
+# for the run 
+
+
+node demo.js
+
+
