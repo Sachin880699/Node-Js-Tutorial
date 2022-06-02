@@ -1,0 +1,30 @@
+_______ demo.js _____________
+
+
+var http = require("http");
+var data = [{"name":"sachin","age":20,"email":"sachin@test.com"},
+            {"name":"sachin","age":20,"email":"sachin@test.com"}]
+
+http.createServer(function(req,res){
+    res.writeHead(200 , {"Content-Type":"application\json"})
+        res.write(JSON.stringify(data));
+        res.end();
+}).listen(3900)
+
+
+
+
+_____________ output _____________
+
+[
+{
+"name": "sachin",
+"age": 20,
+"email": "sachin@test.com"
+},
+{
+"name": "sachin",
+"age": 20,
+"email": "sachin@test.com"
+}
+]
