@@ -1,0 +1,32 @@
+
+
+
+
+________________________ app.js _____________________
+
+
+var express = require("express");
+const app = express();
+
+
+// ________ this is middle ware start ____
+
+const checkUrl = function(req,res,next)
+{
+    console.warn("Current route is ",req.originalUrl)
+next();
+}
+
+
+// ___ middelware end 
+
+
+app.use(checkUrl);       // ++++++++++++++ user before function of middleware
+app.get("/",function(req,res){
+    res.send("This is home page")
+})
+
+
+
+
+app.listen(3000);
