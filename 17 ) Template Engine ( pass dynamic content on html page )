@@ -1,0 +1,31 @@
+
+
+npm i ejs 
+
+
+( ejs  is template )
+
+
+
+________________ app.js ________________
+
+const express = require("express");
+const app = express();
+
+app.set("view engine","ejs");
+
+
+app.get("/profile/:name",function(req,res){
+    console.warn(req.params.name)    
+    res.render("Profile",{name:req.params.name})
+})
+
+
+app.listen(3000)
+
+
+_____________ views/Profile.ejs ___________
+
+<h1>Profile</h1>
+
+welcome <%= name %>
