@@ -1,0 +1,13 @@
+
+sudo npm install -g --force nodemon
+
+____________ demo.js ___________
+
+
+
+var http = require("http");
+
+http.createServer(function(req,res){
+    res.write("hello nodemon");
+    res.end();
+}).listen(3000)
