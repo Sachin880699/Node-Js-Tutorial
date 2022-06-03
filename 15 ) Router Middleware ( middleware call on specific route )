@@ -1,0 +1,36 @@
+
+
+_________________ app.js ________________________-
+
+
+var express = require("express");
+const app = express();
+
+
+const router = express.Router();   
+
+
+
+const checkUrl = function(req,res,next)
+{
+    console.warn("Current route is ",req.originalUrl)
+    next();
+}
+
+
+app.get("/",function(req,res){
+    res.send("This is home page")
+})
+
+
+app.get("/about",checkUrl , function(req,res){ // middleware ( checkUrl ) as second parameter call kelay
+    res.send("This is about page")
+})
+
+
+app.use("/",router) // Yane router saglay var call hoil jithe jiteh declare kelay
+
+
+
+
+app.listen(3000);
