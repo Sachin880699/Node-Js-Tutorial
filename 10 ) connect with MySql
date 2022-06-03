@@ -1,0 +1,23 @@
+npm install mysql
+
+
+_______________ demo.js ____
+
+
+var mysql  = require("mysql");
+var con    = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"fidel123",
+    database:"time_tracker"
+});
+
+con.connect(function(error){
+    if(error) throw error;
+    con.query("select * from accounts_employeeuser ",function(error,result){
+        if(error) throw error;
+        console.warn("all result are here",result)
+    })
+
+})
+
