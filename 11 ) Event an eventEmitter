@@ -1,0 +1,31 @@
+__________ demo.js _______
+
+# normal file open event
+
+
+
+
+var fs = require('fs');
+
+var res = fs.createReadStream("./demo.txt");
+
+res.on("open",function(){
+    console.log("demo file is open")
+})
+
+
+
+
+__________ demo.js ______________
+
+# create custom event
+
+var event = require("events");
+var eventEmitter = new event.EventEmitter();
+
+eventEmitter.on("speak",function(name){
+    console.log(name ,"is speaking")
+})
+
+eventEmitter.emit("speak","Sachin")
+
