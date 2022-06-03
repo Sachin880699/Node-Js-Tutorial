@@ -1,0 +1,21 @@
+
+
+
+___________ app.js _____________
+
+var express = require("express");
+const app = express();
+
+app.get("/",function(req,res){
+    res.send("This is home page")
+})
+
+app.get("/about",function(req,res){
+    res.send("This is about page")
+})
+
+app.post("/login",function(req,res){
+    res.send("This is login page")
+})
+
+app.listen(3000);
