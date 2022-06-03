@@ -1,0 +1,43 @@
+
+__________________ app.js _____________________
+var express = require("express");
+const app = express();
+
+
+const router = express.Router();   
+
+
+const checkUrl = function(req,res,next)
+{
+    console.warn("Current route is ",req.originalUrl)
+    next();
+}
+
+app.get("/",function(req,res){
+    // res.send("This is home page")
+    res.sendFile(__dirname+"/home.html")
+})
+
+app.get("/login",function(req,res){
+    // res.send("This is login page")
+    res.sendFile(__dirname+"/login.html")
+})
+
+
+app.get("/about",checkUrl , function(req,res){ // middleware ( checkUrl ) as second parameter call kelay
+    // res.send("This is about page")
+    res.sendFile(__dirname+"/about.html")
+})
+
+
+app.use("/",router) // Yane router saglay var call hoil jithe jiteh declare kelay
+
+
+app.listen(3000);
+
+
+___________________________ creaet html pages ________
+
+1 ) home.html
+2 ) about.html
+3 ) login.html
